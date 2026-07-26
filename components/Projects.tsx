@@ -11,7 +11,7 @@ type Project = {
   tags: string[];
   hciPrinciple: string;
   hciNote: string;
-  color: string; // gradient stop
+  accentColor: string; // subtle accent only for HCI panel & icon bg
   emoji: string;
   link?: string;
 };
@@ -26,8 +26,9 @@ const PROJECTS: Project[] = [
       "Aplikasi penjadwalan konsultasi dokter yang dirancang dengan antarmuka ramah pengguna untuk lansia, menekankan ukuran teks besar dan navigasi sederhana.",
     tags: ["Figma", "User Research", "Prototyping"],
     hciPrinciple: "Learnability",
-    hciNote: "Sistem dirancang agar pengguna baru dapat langsung menggunakannya tanpa pelatihan — prinsip Alan Dix: learnability.",
-    color: "#7c3aed",
+    hciNote:
+      "Sistem dirancang agar pengguna baru dapat langsung menggunakannya tanpa pelatihan — prinsip Alan Dix: learnability.",
+    accentColor: "#6d28d9",
     emoji: "🏥",
   },
   {
@@ -38,8 +39,9 @@ const PROJECTS: Project[] = [
       "Redesain Learning Management System untuk perguruan tinggi dengan fokus pada efisiensi alur belajar dan konsistensi visual antarmuka.",
     tags: ["Wireframing", "Usability Testing", "Design System"],
     hciPrinciple: "Consistency",
-    hciNote: "Konsistensi elemen UI dipertahankan di seluruh halaman — prinsip Alan Dix: consistency & standards.",
-    color: "#4f46e5",
+    hciNote:
+      "Konsistensi elemen UI dipertahankan di seluruh halaman — prinsip Alan Dix: consistency & standards.",
+    accentColor: "#4338ca",
     emoji: "📚",
   },
   {
@@ -50,8 +52,9 @@ const PROJECTS: Project[] = [
       "Studi kasus UX untuk platform belanja produk organik, mencakup user journey mapping, affinity diagram, dan wireframe mid-fidelity.",
     tags: ["User Journey", "Affinity Diagram", "HCI Analysis"],
     hciPrinciple: "Feedback",
-    hciNote: "Setiap aksi pengguna mendapat respons visual instan (feedback) agar pengguna selalu tahu status sistem — Alan Dix.",
-    color: "#06b6d4",
+    hciNote:
+      "Setiap aksi pengguna mendapat respons visual instan (feedback) agar pengguna selalu tahu status sistem — Alan Dix.",
+    accentColor: "#0e7490",
     emoji: "🛒",
   },
   {
@@ -62,8 +65,9 @@ const PROJECTS: Project[] = [
       "Dashboard visualisasi data keamanan jalan raya real-time untuk dinas perhubungan, menggabungkan data map dan statistik interaktif.",
     tags: ["Data Viz", "Information Architecture", "Figma"],
     hciPrinciple: "Visibility",
-    hciNote: "Informasi kritis selalu terlihat di atas lipatan halaman — prinsip visibility of system status Alan Dix.",
-    color: "#ec4899",
+    hciNote:
+      "Informasi kritis selalu terlihat di atas lipatan halaman — prinsip visibility of system status Alan Dix.",
+    accentColor: "#be185d",
     emoji: "🗺️",
   },
   {
@@ -74,8 +78,9 @@ const PROJECTS: Project[] = [
       "Aplikasi manajemen tugas bergaya kanban dengan fitur drag-and-drop, label prioritas, dan mode kolaborasi tim secara real-time.",
     tags: ["Interaction Design", "Prototyping", "User Testing"],
     hciPrinciple: "Flexibility",
-    hciNote: "Pengguna ahli dan pemula diakomodasi lewat shortcut keyboard dan antarmuka visual — prinsip flexibility & efficiency of use.",
-    color: "#f59e0b",
+    hciNote:
+      "Pengguna ahli dan pemula diakomodasi lewat shortcut keyboard dan antarmuka visual — prinsip flexibility & efficiency of use.",
+    accentColor: "#b45309",
     emoji: "✅",
   },
   {
@@ -86,13 +91,21 @@ const PROJECTS: Project[] = [
       "Aplikasi scan barcode nutrisi makanan yang memberikan informasi gizi secara visual dan rekomendasi diet personal berbasis AI.",
     tags: ["Mobile Design", "AI Integration", "UX Writing"],
     hciPrinciple: "Error Prevention",
-    hciNote: "Desain mencegah kesalahan input sejak awal melalui validasi langsung — prinsip error prevention Alan Dix.",
-    color: "#10b981",
+    hciNote:
+      "Desain mencegah kesalahan input sejak awal melalui validasi langsung — prinsip error prevention Alan Dix.",
+    accentColor: "#065f46",
     emoji: "🥗",
   },
 ];
 
-const CATEGORIES = ["All", "Mobile UI", "Web App", "UX Research", "Dashboard", "Productivity App"];
+const CATEGORIES = [
+  "All",
+  "Mobile UI",
+  "Web App",
+  "UX Research",
+  "Dashboard",
+  "Productivity App",
+];
 
 /* ─── Component ─────────────────────────────────────────── */
 export default function Projects() {
@@ -105,20 +118,22 @@ export default function Projects() {
       : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="relative py-24 px-6 bg-animated">
+    <section id="projects" className="py-24 px-6 bg-[#FAFAFA]">
       {/* ── Section header ── */}
       <div className="max-w-6xl mx-auto mb-14 text-center">
-        <p className="text-sm font-mono text-cyan-400 tracking-widest uppercase mb-3">
+        <p className="text-xs font-mono text-slate-400 tracking-widest uppercase mb-3">
           Design Portfolio
         </p>
-        <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-          <span className="text-white">Karya &amp; </span>
-          <span className="gradient-text">Studi Kasus</span>
+        <h2 className="text-4xl sm:text-5xl font-bold text-slate-800 mb-4">
+          Karya &amp; Studi Kasus
         </h2>
-        <p className="max-w-xl mx-auto text-slate-400 text-base leading-relaxed">
+        <p className="max-w-xl mx-auto text-slate-600 text-base leading-relaxed">
           Setiap proyek dilandasi prinsip{" "}
-          <span className="text-violet-300 font-semibold">Human-Computer Interaction</span>{" "}
-          menurut Alan Dix — menggabungkan estetika visual dengan fondasi teori interaksi yang kuat.
+          <span className="text-slate-800 font-semibold">
+            Human-Computer Interaction
+          </span>{" "}
+          menurut Alan Dix — menggabungkan estetika visual dengan fondasi teori
+          interaksi yang kuat.
         </p>
       </div>
 
@@ -128,19 +143,11 @@ export default function Projects() {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
               activeCategory === cat
-                ? "text-white glow-violet"
-                : "glass text-slate-400 hover:text-white hover:border-violet-400/50"
+                ? "bg-slate-800 text-white shadow-sm"
+                : "bg-white text-slate-500 border border-slate-200 hover:border-slate-400 hover:text-slate-700"
             }`}
-            style={
-              activeCategory === cat
-                ? {
-                    background:
-                      "linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)",
-                  }
-                : {}
-            }
           >
             {cat}
           </button>
@@ -148,54 +155,46 @@ export default function Projects() {
       </div>
 
       {/* ── Project grid ── */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {filtered.map((project) => (
           <article
             key={project.id}
-            className="glass-card rounded-2xl p-6 cursor-pointer flex flex-col gap-4"
+            className="bg-white rounded-2xl p-6 cursor-pointer flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow duration-200 border border-slate-100"
             onClick={() =>
               setExpandedId(expandedId === project.id ? null : project.id)
             }
           >
             {/* Card header */}
             <div className="flex items-start justify-between gap-3">
+              {/* Icon */}
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0"
-                style={{
-                  background: `linear-gradient(135deg, ${project.color}33 0%, ${project.color}11 100%)`,
-                  border: `1px solid ${project.color}44`,
-                }}
+                className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 bg-slate-50 border border-slate-100"
               >
                 {project.emoji}
               </div>
-              <span
-                className="text-xs font-mono px-2.5 py-1 rounded-full border"
-                style={{
-                  color: project.color,
-                  borderColor: `${project.color}44`,
-                  background: `${project.color}11`,
-                }}
-              >
+
+              {/* Category badge */}
+              <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
                 {project.category}
               </span>
             </div>
 
             {/* Title & description */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-base font-bold text-slate-800 mb-1.5">
                 {project.title}
               </h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-sm text-slate-500 leading-relaxed">
                 {project.description}
               </p>
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-2.5 py-1 rounded-full bg-white/5 text-slate-400 border border-white/10"
+                  className="text-xs px-2.5 py-1 rounded-full bg-slate-100 text-slate-500"
                 >
                   {tag}
                 </span>
@@ -207,17 +206,17 @@ export default function Projects() {
               <div
                 className="rounded-xl p-4 border text-sm"
                 style={{
-                  background: `${project.color}0d`,
-                  borderColor: `${project.color}33`,
+                  background: `${project.accentColor}0a`,
+                  borderColor: `${project.accentColor}22`,
                 }}
               >
-                <p className="font-semibold text-white mb-1">
+                <p className="font-semibold text-slate-700 mb-1">
                   🎓 HCI Principle:{" "}
-                  <span style={{ color: project.color }}>
+                  <span style={{ color: project.accentColor }}>
                     {project.hciPrinciple}
                   </span>
                 </p>
-                <p className="text-slate-400 leading-relaxed">
+                <p className="text-slate-500 leading-relaxed">
                   {project.hciNote}
                 </p>
               </div>
@@ -225,7 +224,7 @@ export default function Projects() {
 
             {/* Toggle hint */}
             <button
-              className="mt-auto text-xs font-mono text-slate-500 hover:text-violet-400 transition-colors text-left flex items-center gap-1.5 group"
+              className="mt-auto text-xs font-mono text-slate-400 hover:text-slate-700 transition-colors text-left flex items-center gap-1.5 group"
               aria-expanded={expandedId === project.id}
               onClick={(e) => {
                 e.stopPropagation();
@@ -233,7 +232,7 @@ export default function Projects() {
               }}
             >
               <span
-                className="inline-block transition-transform duration-300 group-hover:translate-x-0.5"
+                className="inline-block transition-transform duration-300"
                 style={{
                   transform:
                     expandedId === project.id ? "rotate(90deg)" : "rotate(0deg)",
@@ -251,10 +250,21 @@ export default function Projects() {
 
       {/* ── Empty state ── */}
       {filtered.length === 0 && (
-        <p className="text-center text-slate-500 mt-8">
+        <p className="text-center text-slate-400 mt-8 text-sm">
           Belum ada proyek di kategori ini.
         </p>
       )}
+
+      {/* ── Footer strip ── */}
+      <div className="max-w-6xl mx-auto mt-20 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
+        <span>
+          Designed by{" "}
+          <span className="text-slate-600 font-semibold">
+            Shilva Damayanti Santoso
+          </span>
+        </span>
+        <span>Sistem dan Teknologi Informasi · {new Date().getFullYear()}</span>
+      </div>
     </section>
   );
 }
