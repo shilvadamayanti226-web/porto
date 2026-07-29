@@ -18,54 +18,23 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Poster Himasista 2024",
+    title: "Poster Anti-Narkotika",
     category: "Himasista",
-    image: "/desain1.jpg",
+    image: "/poster-narkotika.jpg", // Pastikan nama file dan ekstensinya persis sama
     span: "tall",
   },
   {
     id: 2,
-    title: "MedSchedule App — HCI Study",
-    category: "UI/UX & HCI",
-    image: "/desain2.jpg",
-    span: "normal",
-  },
-  {
-    id: 3,
-    title: "Review Produk Skincare",
-    category: "Promotional & Affiliate",
-    image: "/desain3.jpg",
-    span: "short",
-  },
-  {
-    id: 4,
-    title: "ERD Sistem Perpustakaan",
-    category: "System Diagrams",
-    image: "/desain4.jpg",
-    span: "normal",
-  },
-  {
-    id: 5,
-    title: "Open Recruitment Himasista",
+    title: "Technical Meeting Maba Sistekin '26",
     category: "Himasista",
-    image: "/desain5.jpg",
-    span: "tall",
-  },
-  {
-    id: 6,
-    title: "EduFlow LMS — UI Redesign",
-    category: "UI/UX & HCI",
-    image: "/desain6.jpg",
-    span: "short",
+    image: "/tm-sistekin.jpg", // Pastikan nama file dan ekstensinya persis sama
+    span: "normal",
   },
 ];
 
 const CATEGORIES = [
   "All",
   "Himasista",
-  "UI/UX & HCI",
-  "Promotional & Affiliate",
-  "System Diagrams",
 ];
 
 /* ─── Height map ─────────────────────────────────────────── */
@@ -105,11 +74,10 @@ export default function Projects() {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-              activeCategory === cat
-                ? "bg-slate-800 text-white shadow-sm"
-                : "bg-white text-slate-500 border border-slate-200 hover:border-slate-400 hover:text-slate-700"
-            }`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${activeCategory === cat
+              ? "bg-slate-800 text-white shadow-sm"
+              : "bg-white text-slate-500 border border-slate-200 hover:border-slate-400 hover:text-slate-700"
+              }`}
           >
             {cat}
           </button>
