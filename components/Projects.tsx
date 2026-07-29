@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -18,43 +18,43 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "MedSchedule App",
-    category: "Mobile UI",
+    title: "Poster Himasista 2024",
+    category: "Himasista",
     image: "/desain1.jpg",
     span: "tall",
   },
   {
     id: 2,
-    title: "EduFlow LMS",
-    category: "Web App",
+    title: "MedSchedule App — HCI Study",
+    category: "UI/UX & HCI",
     image: "/desain2.jpg",
     span: "normal",
   },
   {
     id: 3,
-    title: "GreenMart E-Commerce",
-    category: "UX Research",
+    title: "Review Produk Skincare",
+    category: "Promotional & Affiliate",
     image: "/desain3.jpg",
     span: "short",
   },
   {
     id: 4,
-    title: "SafeRoute Dashboard",
-    category: "Dashboard",
+    title: "ERD Sistem Perpustakaan",
+    category: "System Diagrams",
     image: "/desain4.jpg",
     span: "normal",
   },
   {
     id: 5,
-    title: "TaskFlow Kanban",
-    category: "Productivity App",
+    title: "Open Recruitment Himasista",
+    category: "Himasista",
     image: "/desain5.jpg",
     span: "tall",
   },
   {
     id: 6,
-    title: "NutriScan Mobile",
-    category: "Mobile UI",
+    title: "EduFlow LMS — UI Redesign",
+    category: "UI/UX & HCI",
     image: "/desain6.jpg",
     span: "short",
   },
@@ -62,11 +62,10 @@ const PROJECTS: Project[] = [
 
 const CATEGORIES = [
   "All",
-  "Mobile UI",
-  "Web App",
-  "UX Research",
-  "Dashboard",
-  "Productivity App",
+  "Himasista",
+  "UI/UX & HCI",
+  "Promotional & Affiliate",
+  "System Diagrams",
 ];
 
 /* ─── Height map ─────────────────────────────────────────── */
